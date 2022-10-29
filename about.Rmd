@@ -27,7 +27,7 @@ output:
 
 ### Publication
 
-* Wang, Z., Jamal A., Wang R., Dan S., Kappagoda S., Kim G., Palaniappan L., Long J., Singh J., Srinivasan M. 2022. Disparities and Trends in Routine Adult Vaccination Rates Among Disaggregated Asian American Subgroups, NHIS 2006-2018. AJPM Focus. Accepted.
+* **Wang, Z.**, Jamal A., Wang R., Dan S., Kappagoda S., Kim G., Palaniappan L., Long J., Singh J., Srinivasan M. 2022. Disparities and Trends in Routine Adult Vaccination Rates Among Disaggregated Asian American Subgroups, NHIS 2006-2018. AJPM Focus. Accepted.
 
 
 
