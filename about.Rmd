@@ -1,8 +1,36 @@
 ---
-title: "about"
-author: "Ziqing Wang"
-date: "2022-10-27"
-output: html_document
+title: "About me"
+author: ""
+date: ""
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cosmo
 ---
 
-`
+### Education
+
+* MS in Biostatistics, Columbia University, 2022 - 2024
+* BA in Psychology and Statistical Science, Cornell University, 2018 - 2022
+
+### Experience 
+
+* Research Assistant at Stanford University School of Medicine, Stanford, CA
+  + Project 1 - Disparities in Routine Vaccination in Asian Americans (Jun 2021 - Oct 2022)
+    - Cleaned and analyzed over 1 million entries in the National Health Interview Survey data using survey weighting, multivariate logistic regression, predictive marginal modeling, and Joinpoint regression.
+    - Presented results at academic conferences, such as the Consortium of Universities for Global Health and the Annual Stanford Global Health Convening.
+  + Project 2 - NOURISH: Improving Access and Literacy on Healthy Asian Diets to Prevent and Control Diabetes for Asian Populations (May 2022 - Aug 2022)
+    - Drafted a KAP (Knowledge, Attitude, and Practice) survey to be used in a self-controlled case series study that aims to quantify the effectiveness of a hybrid diabetes intervention culturally tailored to Asian Americans.
+    - Drafted and revised sections of multiple grant applications for the study.
+
+
+### Publication
+
+* Wang, Z., Jamal A., Wang R., Dan S., Kappagoda S., Kim G., Palaniappan L., Long J., Singh J., Srinivasan M. 2022. Disparities and Trends in Routine Adult Vaccination Rates Among Disaggregated Asian American Subgroups, NHIS 2006-2018. AJPM Focus. Accepted.
+
+
+
+
+
+

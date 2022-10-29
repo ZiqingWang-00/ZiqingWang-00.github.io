@@ -1,14 +1,13 @@
 ---
-title: "my homepage"
+title: "Ziqing's homepage"
 output: 
   html_document:
     toc: true
     toc_float: true
-    theme: cerulean
+    theme: cosmo
 ---
 
-# Hi!
-
+Hi! I am an aspiring biostatistician.
 
 
 
