@@ -26,7 +26,7 @@ boro_score = rest_inspec %>%
   filter(!is.na(score), boro %in% c("MANHATTAN", "BRONX", "QUEENS", "BROOKLYN", "STATEN ISLAND")) %>%
   mutate(boro = fct_reorder(boro, score)) %>%
   plot_ly(y = ~score, color = ~boro, type = "box") %>%
-  layout(title = "Inspection score ny boro")
+  layout(title = "Inspection score by boro")
 
 boro_score
 
