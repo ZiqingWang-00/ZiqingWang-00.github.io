@@ -1,8 +1,7 @@
 ---
-title: "dashboard"
+title: "NYC Restaurant Inspection Dashboard"
 output: 
   flexdashboard::flex_dashboard:
-    orientation: columns
     vertical_layout: scroll
 ---
 
@@ -15,8 +14,6 @@ library(plotly)
 data("rest_inspec")
 ```
 
-Column {data-width=650}
------------------------------------------------------------------------
 
 ### Chart A
 
