@@ -1,8 +1,87 @@
 ---
 title: "dashboard"
-author: ""
-date: ""
 output: 
-  html_document:
-    theme: cosmo
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
 ---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+
+data("rest_inspec")
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r score by boro}
+boro_score = rest_inspec %>%
+  select(boro, score) %>%
+  filter(!is.na(score), boro %in% c("MANHATTAN", "BRONX", "QUEENS", "BROOKLYN", "STATEN ISLAND")) %>%
+  mutate(boro = fct_reorder(boro, score)) %>%
+  plot_ly(y = ~score, color = ~boro, type = "box") %>%
+  layout(title = "Inspection score ny boro")
+
+boro_score
+
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r cuisine piechart}
+cuisine_count = rest_inspec %>% 
+  group_by(cuisine_description) %>% 
+  summarize(count = n()) %>%
+  arrange(desc(count)) %>%
+  mutate(total = sum(count),
+         other = ifelse(count < 11884, "other", "not other")) # group all cuisines not in top 10 most violations as "other"
+
+cuisine_count_other = cuisine_count %>% 
+  filter(other == "other") %>%
+  mutate(total_count = sum(count))
+
+reduced_cuisine_count = cuisine_count %>%
+  filter(other == "not other") %>%
+  add_row(cuisine_description = "other",
+          count = cuisine_count_other$total_count[1], 
+          total = cuisine_count_other$total[1]) %>%
+  select(cuisine_description, count) %>%
+  mutate(cuisine_description = replace(cuisine_description, 
+                                       cuisine_description=="Latin (Cuban, Dominican, Puerto Rican, South & Central American)", 
+                                       "Latin"))
+  
+#reduced_cuisine_count
+
+piechart <- plot_ly(reduced_cuisine_count, labels = ~cuisine_description, values = ~count, type = 'pie') %>%
+  layout(title = 'Cuisines with the most violations')
+piechart
+```
+
+### Chart C
+
+```{r proportion of critical violations by boro}
+critical = rest_inspec %>%
+  select(boro, critical_flag) %>%
+  filter(critical_flag %in% c("Critical", "Not Critical"), 
+         boro %in% c("MANHATTAN", "BRONX", "QUEENS", "BROOKLYN", "STATEN ISLAND")) %>%
+  group_by(boro, critical_flag) %>%
+  summarize(count = n()) %>%
+  group_by(boro) %>%
+  mutate(percent = count/sum(count)*100) %>%
+  filter(critical_flag == "Critical") %>%
+  plot_ly(x = ~boro, y = ~percent, type = "bar",
+          text = ~count) %>%
+  layout(title = "Percent critical violations in each boro (counts of violations included)")
+
+critical 
+```
+
