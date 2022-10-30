@@ -9,7 +9,7 @@ output:
 
 Hi! I am an aspiring biostatistician.  
 
-Recently, I am learning interactive dashboards, and I have put a link to the demo I made here. 
+Recently, I am learning interactive dashboards, and I have put a link to the demo I made [here](https://ziqingwang-00.github.io/dashboard.html). 
 
 
 
