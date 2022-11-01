@@ -18,7 +18,7 @@ output:
 
 * Research Assistant at Stanford University School of Medicine, Stanford, CA
   + Project 1 - Disparities in Routine Vaccination in Asian Americans (Jun 2021 - Oct 2022)
-    - Cleaned and analyzed over 1 million entries in the National Health Interview Survey data using survey weighting, multivariate logistic regression, predictive marginal modeling, and Joinpoint regression.
+    - Cleaned and analyzed over 1 million entries in the National Health Interview Survey data using survey weighting, multivariable logistic regression, predictive marginal modeling, and Joinpoint regression.
     - Presented results at academic conferences, such as the Consortium of Universities for Global Health and the Annual Stanford Global Health Convening.
   + Project 2 - NOURISH: Improving Access and Literacy on Healthy Asian Diets to Prevent and Control Diabetes for Asian Populations (May 2022 - Aug 2022)
     - Drafted a KAP (Knowledge, Attitude, and Practice) survey to be used in a self-controlled case series study that aims to quantify the effectiveness of a hybrid diabetes intervention culturally tailored to Asian Americans.
