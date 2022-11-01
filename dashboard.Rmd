@@ -15,9 +15,7 @@ data("rest_inspec")
 ```
 
 
-### Chart A
-
-```{r score by boro}
+```{r score by boro, echo=FALSE, warning=FALSE, message=FALSE}
 boro_score = rest_inspec %>%
   select(boro, score) %>%
   filter(!is.na(score), boro %in% c("MANHATTAN", "BRONX", "QUEENS", "BROOKLYN", "STATEN ISLAND")) %>%
@@ -29,12 +27,9 @@ boro_score
 
 ```
 
-Column {data-width=350}
------------------------------------------------------------------------
 
-### Chart B
 
-```{r cuisine piechart}
+```{r cuisine piechart, echo=FALSE, warning=FALSE, message=FALSE}
 cuisine_count = rest_inspec %>% 
   group_by(cuisine_description) %>% 
   summarize(count = n()) %>%
@@ -63,9 +58,8 @@ piechart <- plot_ly(reduced_cuisine_count, labels = ~cuisine_description, values
 piechart
 ```
 
-### Chart C
 
-```{r proportion of critical violations by boro}
+```{r proportion of critical violations by boro, echo=FALSE, warning=FALSE, message=FALSE}
 critical = rest_inspec %>%
   select(boro, critical_flag) %>%
   filter(critical_flag %in% c("Critical", "Not Critical"), 
@@ -77,7 +71,7 @@ critical = rest_inspec %>%
   filter(critical_flag == "Critical") %>%
   plot_ly(x = ~boro, y = ~percent, type = "bar",
           text = ~count) %>%
-  layout(title = "Percent critical violations in each boro (counts of violations included)")
+  layout(title = "% critical violations by boro (counts included)")
 
 critical 
 ```
